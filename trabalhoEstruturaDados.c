@@ -55,7 +55,7 @@ int realizarQuestao(const char *url, const char *api_key, const char *pergunta, 
 		// Construct the JSON payload dynamically
 		JSON_Value *root_value = json_value_init_object();
 		JSON_Object *json_object = json_value_get_object(root_value);
-		json_object_set_string(json_object, "prompt", pergunta);
+		//json_object_set_string(json_object, "prompt", pergunta);
 		json_object_set_string(json_object, "model", model);
 		json_object_set_number(json_object, "max_tokens", 100);
 		json_object_set_number(json_object, "temperature", 0.7);
@@ -66,8 +66,8 @@ int realizarQuestao(const char *url, const char *api_key, const char *pergunta, 
 		// Create first JSON object
 		JSON_Value *item_value1 = json_value_init_object();
 		JSON_Object *item_object1 = json_value_get_object(item_value1);
-		json_object_set_string(item_object1, "role", "assistant");
-		json_object_set_string(item_object1, "content", "Reply back helpfully");
+		json_object_set_string(item_object1, "role", "user");
+		json_object_set_string(item_object1, "content", "Capital da Russia?");
 		json_array_append_value(array, item_value1);
 
 		// You can add more objects similarly if needed
@@ -133,7 +133,7 @@ int main()
 {
 
 	const char *url = "https://api.openai.com/v1/chat/completions";
-    const char *api_key = "coloca a chave aqui o"; 
+    const char *api_key = ""; 
     const char *model = "gpt-3.5-turbo";
 	const char *pergunta = NULL;
 	char buf[256];
