@@ -129,7 +129,7 @@ int main()
 {
 
 	const char *url = "https://api.openai.com/v1/chat/completions";
-    const char *api_key = "sk-proj-4zfRp6IOOIVg8kKE7ZA2T3BlbkFJELaSPqd0kzUFXRed5zij"; 
+    const char *api_key = "api"; 
     const char *model = "gpt-3.5-turbo";
 	char pergunta[256];
     curl_global_init(CURL_GLOBAL_ALL);
